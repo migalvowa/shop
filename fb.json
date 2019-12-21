@@ -1,0 +1,40 @@
+{
+  "items": {
+    "01": {
+      "title": "Title 1",
+      "description": "Description 1",
+      "price": 1,
+      "photos": {
+        "01": "url1",
+        "02": "url2",
+        "03": "url3"
+      },
+      "slug": "url1",
+      "createdAt": 1576090022847
+    },
+    "02": {
+      "title": "Title 2",
+      "description": "Description 2",
+      "price": 2,
+      "photos": {
+        "01": "url1",
+        "02": "url2",
+        "03": "url3"
+      },
+      "slug": "url1",
+      "createdAt": 1576090022847
+    },
+    "03": {
+      "title": "Title 3",
+      "description": "Description 3",
+      "price": 3,
+      "photos": {
+        "01": "url1",
+        "02": "url2",
+        "03": "url3"
+      },
+      "slug": "url1",
+      "createdAt": 1576090022847
+    }
+  }
+}
