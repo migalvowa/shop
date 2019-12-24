@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import firebase, { todosRef } from "./config/firebase";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import Layout from "./components/Layout/Layout";
@@ -26,11 +25,7 @@ function App() {
 
 export default App;
 
-
-
 // ---
-
-
 
 // import { Formik, Form, Field } from "formik";
 // import * as Yup from "yup";
@@ -92,11 +87,7 @@ export default App;
 
 // export default App;
 
-
-
 // ---
-
-
 
 // class App extends React.Component {
 //   state = {

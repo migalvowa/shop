@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import Item from "../Item/Item";
 import { getItems } from "../../actions/items.action";
@@ -9,7 +9,7 @@ import "./styles/index.scss";
 // ---
 
 class Items extends React.Component {
-  state = { items: {} }
+  state = { items: {} };
 
   componentDidMount() {
     this.props.getData();
@@ -24,13 +24,8 @@ class Items extends React.Component {
 
     return (
       <ul className="items">
-        {Object.entries(items).map(([i, item]) => {
-          return (
-            <Item
-              key={i}
-              item={item}
-            />
-          );
+        {items.map(item => {
+          return <Item key={item.id} item={item} />;
         })}
       </ul>
     );
@@ -39,12 +34,12 @@ class Items extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    list: state.items
+    list: state.items,
   };
 };
 
 const mapDispatchToProps = {
-  getData: getItems
+  getData: getItems,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items);

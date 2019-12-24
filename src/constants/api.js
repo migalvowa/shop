@@ -1,1 +1,1 @@
-export const URL = "https://shop-62b9c.firebaseio.com";
+export const URL = "http://localhost:1337";
