@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import {useParams} from "react-router-dom";
-import { connect } from 'react-redux';
+import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { getItem } from "../../../actions/items.action";
 
@@ -8,7 +8,7 @@ import "./styles/index.scss";
 
 // ---
 
-const ItemPage = ({getItem, item}) => {
+const ItemPage = ({ getItem, item }) => {
   let { slug } = useParams();
 
   useEffect(() => {
@@ -21,19 +21,20 @@ const ItemPage = ({getItem, item}) => {
 
   return (
     <div className="item-page">
-      <h1>{item.description}</h1>
+      <h1>{item.title}</h1>
+      <p>{item.description}</p>
     </div>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
-    item: state.item
+    item: state.item,
   };
 };
 
 const mapDispatchToProps = {
-  getItem
+  getItem,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);

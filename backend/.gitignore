@@ -65,7 +65,8 @@ $RECYCLE.BIN/
 # Logs and databases
 ############################
 
-.tmp
+# adding DB to index to share via github, only on 1st stage of development
+# .tmp
 *.log
 *.sql
 *.sqlite
