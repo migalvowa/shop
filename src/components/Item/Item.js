@@ -6,12 +6,11 @@ import "./styles/index.scss";
 // ---
 
 const Item = ({ item }) => {
-  console.log(item.slug);
   return (
     <li className="item">
-      <Link to={item.slug}>{item.title}</Link>
+      <Link to={`items/${item.slug}`}>{item.title}</Link>
 
-      <img src={item.photos} />
+      <img src={item.photos["01"]} />
     </li>
   );
 }

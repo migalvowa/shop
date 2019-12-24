@@ -9,10 +9,14 @@ export const getItems = () => {
   };
 };
 
-export const getItem = (slug) => {
+export const getItem = slug => {
   return async (dispatch) => {
     const { data } = await axios.get(`${URL}/items.json`);
-    const item = data.find((item, i) => item[i].slug === slug);
+    const dataList = Object.entries(data).map(([key, item]) => ({
+      id: key,
+      ...item
+    }));
+    const item = dataList.find(item => item.slug === slug);
     dispatch({ type: GET_ITEM, payload: item });
   };
 };
