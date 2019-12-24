@@ -1,8 +1,8 @@
-import { GET_ITEMS } from "../constants/action-types";
+import { GET_ITEMS, GET_ITEM } from "../constants/action-types";
 
 const initialState = {
-  items: {},
-  title: "Todo App"
+  items: null,
+  item: null
 };
 
 function itemsReducer(state = initialState, action) {
@@ -11,6 +11,12 @@ function itemsReducer(state = initialState, action) {
       return {
         ...state,
         items: action.payload
+      };
+
+    case GET_ITEM:
+      return {
+        ...state,
+        item: action.payload
       };
 
     default:

@@ -1,4 +1,23 @@
 .layout {
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+
+  &__main {
+    flex-grow: 1;
+
+    padding: 20px;
+  }
+
+  // todo: move common styles to general file
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }

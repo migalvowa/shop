@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {useParams} from "react-router-dom";
+import { connect } from 'react-redux';
 
-import Layout from "../../Layout/Layout";
+import { getItem } from "../../../actions/items.action";
 
 import "./styles/index.scss";
 
 // ---
 
-const ItemPage = () => {
+const ItemPage = ({getItem, item}) => {
+  let { slug } = useParams();
+
+  useEffect(() => {
+    getItem(slug);
+  }, []);
+
+  if (!item) {
+    return null;
+  }
+
   return (
     <div className="item-page">
-      <Layout>
-        Item
-      </Layout>
+      <h1>{item.description}</h1>
     </div>
   );
 }
 
-export default ItemPage;
+const mapStateToProps = state => {
+  return {
+    item: state.item
+  };
+};
+
+const mapDispatchToProps = {
+  getItem
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);

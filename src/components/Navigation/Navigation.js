@@ -8,10 +8,10 @@ import "./styles/index.scss";
 const Navigation = () => {
   return (
     <ul className="navigation">
-      <li className="navigation__link">
+      <li className="navigation__item">
         <Link to="/">Home</Link>
       </li>
-      <li className="navigation__link">
+      <li className="navigation__item">
         <Link to="/item">Item</Link>
       </li>
     </ul>

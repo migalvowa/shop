@@ -3,20 +3,23 @@ import firebase, { todosRef } from "./config/firebase";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import "./App.css";
 
+import Layout from "./components/Layout/Layout";
 import HomePage from "./components/pages/HomePage/HomePage";
 import ItemPage from "./components/pages/ItemPage/ItemPage";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/">
-          <HomePage />
-        </Route>
-        <Route path="/item">
-          <ItemPage />
-        </Route>
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route path="/items/:slug">
+            <ItemPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Layout>
     </Router>
   );
 }
