@@ -58,7 +58,7 @@ const ItemPage = ({ getItem, item }) => {
                 >
                   <img
                     src={`${URL}${element.url}`}
-                    alt={element.title}
+                    alt={item.title}
                   />
                 </li>
               );
