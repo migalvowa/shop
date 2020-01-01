@@ -7,17 +7,38 @@
   &__main {
     flex-grow: 1;
 
-    padding: 20px;
+    padding: 20px 0;
   }
+}
 
-  // todo: move common styles to general file
-  * {
-    box-sizing: border-box;
-  }
+// todo: move common styles to general file
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  display: block;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 0;
 }

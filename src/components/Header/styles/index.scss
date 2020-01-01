@@ -1,5 +1,9 @@
 .header {
-  background: #000;
+  background: #9b4646;
+  padding: 20px 0;
 
-  padding: 50px;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
 }

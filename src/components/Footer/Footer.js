@@ -1,5 +1,7 @@
 import React from "react";
 
+import Container from "../Container/Container";
+
 import "./styles/index.scss";
 
 // ---
@@ -7,7 +9,9 @@ import "./styles/index.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-      Footer
+      <Container className="footer__container">
+        Footer
+      </Container>
     </footer>
   );
 }

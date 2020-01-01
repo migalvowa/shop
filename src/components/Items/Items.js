@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import classNames from "classnames";
 
 import Item from "../Item/Item";
 import { getItems } from "../../actions/items.action";
@@ -9,21 +10,21 @@ import "./styles/index.scss";
 // ---
 
 class Items extends React.Component {
-  state = { items: {} };
+  // state = { items: {} };
 
   componentDidMount() {
-    this.props.getData();
+    this.props.getItems();
   }
 
   render() {
-    const items = this.props.list;
+    const { items, className } = this.props;
 
     if (!items) {
       return null;
     }
 
     return (
-      <ul className="items">
+      <ul className={classNames("items", className)}>
         {items.map(item => {
           return <Item key={item.id} item={item} />;
         })}
@@ -34,12 +35,12 @@ class Items extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    list: state.items,
+    items: state.items
   };
 };
 
 const mapDispatchToProps = {
-  getData: getItems,
+  getItems
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items);

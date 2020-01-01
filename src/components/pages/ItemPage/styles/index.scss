@@ -1,3 +1,31 @@
 .item-page {
-  //
+  &__content {
+    display: flex;
+
+    margin-top: 20px;
+  }
+
+  &__pictures {
+    width: 50%;
+    margin-right: 5%;
+  }
+
+  &__pictures-list {
+    margin-top: 20px;
+    display: flex;
+  }
+
+  &__pictures-item {
+    cursor: pointer;
+  }
+
+  &__description {
+    width: 45%;
+  }
+
+  &__order-btn {
+    color: #fff;
+    background: #000;
+    margin-top: 20px;
+  }
 }
