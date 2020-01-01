@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "orders",
+  "info": {
+    "name": "order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "items": {
+      "collection": "item"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "post_office": {
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "todo",
+        "in_progress",
+        "sent",
+        "delivered",
+        "finished"
+      ],
+      "type": "enumeration"
+    }
+  }
+}
