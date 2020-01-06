@@ -2,21 +2,21 @@ import React from "react";
 
 import Container from "../Container/Container";
 import Header from "../Header/Header";
-import Breadcrumbs from "../Breadcrumbs/Breadcrumbs"
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Footer from "../Footer/Footer";
 
 import "./styles/index.scss";
 
 // ---
 
-const Layout = ({ children, isHomePage }) => {
+const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Header />
 
       <main className="layout__main">
         <Container>
-          {!isHomePage && <Breadcrumbs />}
+          <Breadcrumbs />
 
           {children}
         </Container>
@@ -25,6 +25,6 @@ const Layout = ({ children, isHomePage }) => {
       <Footer />
     </div>
   );
-}
+};
 
 export default Layout;

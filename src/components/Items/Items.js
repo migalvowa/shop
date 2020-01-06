@@ -10,8 +10,6 @@ import "./styles/index.scss";
 // ---
 
 class Items extends React.Component {
-  // state = { items: {} };
-
   componentDidMount() {
     this.props.getItems();
   }

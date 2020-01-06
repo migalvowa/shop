@@ -1,6 +1,9 @@
 import axios from "axios";
+
 import { GET_ITEMS, GET_ITEM } from "../constants/action-types";
 import { URL } from "../constants/api";
+
+// ---
 
 export const getItems = () => {
   return async dispatch => {

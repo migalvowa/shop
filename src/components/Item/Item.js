@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import Button from "../Button/Button";
 import { URL } from "../../constants/api";
@@ -24,6 +24,6 @@ const Item = ({ item }) => {
       <Button className="item__order-btn">Купить</Button>
     </li>
   );
-}
+};
 
 export default Item;

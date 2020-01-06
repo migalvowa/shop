@@ -11,6 +11,6 @@ const Container = ({ children, className } ) => {
       {children}
     </div>
   );
-}
+};
 
 export default Container;

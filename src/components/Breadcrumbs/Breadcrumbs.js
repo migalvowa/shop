@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "./styles/index.scss";
 
@@ -25,7 +25,7 @@ const Breadcrumbs = ({ items }) => {
         )}
     </ul>
   );
-}
+};
 
 Breadcrumbs.defaultProps = {
   items: [

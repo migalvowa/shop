@@ -6,19 +6,19 @@ import "./styles/index.scss";
 
 // ---
 
-const Button = ({ children, type, className, standard, ...props } ) => {
+const Button = ({ children, type, className, standard, ...rest } ) => {
   return (
     <button
       type={type}
       className={classNames("btn", className, {
         "btn--default": standard
       })}
-      {...props}
+      {...rest}
     >
       {children}
     </button>
   );
-}
+};
 
 Button.defaultProps = {
   type: "button",

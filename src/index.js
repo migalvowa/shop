@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
 import { createLogger } from "redux-logger";
 import { Provider } from "react-redux";
@@ -10,6 +10,10 @@ import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import reducer from "./reducers/index";
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+import "./styles/index.scss";
+
+// ---
 
 const store = createStore(
   reducer,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
+import classNames from "classnames";
 
 import Button from "../../Button/Button";
 import { getItem } from "../../../actions/items.action";
@@ -17,17 +18,22 @@ const ItemPage = ({ getItem, item }) => {
     getItem(slug);
   }, []);
 
+  useEffect(() => {
+    if (item) {
+      const pictures = item.photos;
+      setBigPicture(`${URL}${pictures[0].url}`);
+      setActive(pictures[0].id);
+    }
+  }, [item]);
+
   const [bigPicture, setBigPicture] = useState(null);
+  const [active, setActive] = useState(null);
 
   if (!item) {
     return null;
   }
 
   const pictures = item.photos;
-
-  if (!bigPicture) {
-    setBigPicture(`${URL}${pictures[0].url}`);
-  }
 
   const handleClick = id => {
     const newPicture = pictures.find(item => item.id === id);
@@ -37,6 +43,8 @@ const ItemPage = ({ getItem, item }) => {
     }
 
     setBigPicture(`${URL}${newPicture.url}`);
+
+    setActive(id);
   };
 
   return (
@@ -52,7 +60,9 @@ const ItemPage = ({ getItem, item }) => {
             {pictures.map(element => {
               return (
                 <li
-                  className="item-page__pictures-item"
+                  className={classNames("item-page__pictures-item", {
+                    "item-page__pictures-item--active": active === element.id
+                  })}
                   key={element.id}
                   onClick={() => handleClick(element.id)}
                 >

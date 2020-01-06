@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./App.css";
 
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/pages/HomePage/HomePage";
+import CategoryPage from "./components/pages/CategoryPage/CategoryPage";
 import ItemPage from "./components/pages/ItemPage/ItemPage";
+
+// ---
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
         <Switch>
           <Route path="/items/:slug">
             <ItemPage />
+          </Route>
+          <Route path="/categories/:slug">
+            <CategoryPage />
           </Route>
           <Route path="/">
             <HomePage />
