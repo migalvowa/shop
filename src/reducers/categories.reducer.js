@@ -1,8 +1,8 @@
 import { GET_CATEGORIES, GET_CATEGORY } from "../constants/action-types";
 
 const initialState = {
-  categories: null,
-  category: null
+  list: [],
+  current: null
 };
 
 function categoriesReducer(state = initialState, action) {
@@ -10,13 +10,13 @@ function categoriesReducer(state = initialState, action) {
     case GET_CATEGORIES:
       return {
         ...state,
-        categories: action.payload
+        list: action.payload
       };
 
     case GET_CATEGORY:
       return {
         ...state,
-        category: action.payload
+        current: action.payload
       };
 
     default:

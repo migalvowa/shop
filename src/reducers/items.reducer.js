@@ -1,8 +1,8 @@
 import { GET_ITEMS, GET_ITEM } from "../constants/action-types";
 
 const initialState = {
-  items: null,
-  item: null
+  list: [],
+  current: null
 };
 
 function itemsReducer(state = initialState, action) {
@@ -10,13 +10,13 @@ function itemsReducer(state = initialState, action) {
     case GET_ITEMS:
       return {
         ...state,
-        items: action.payload
+        list: action.payload
       };
 
     case GET_ITEM:
       return {
         ...state,
-        item: action.payload
+        current: action.payload
       };
 
     default:

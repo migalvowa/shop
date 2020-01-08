@@ -17,10 +17,6 @@ class Items extends React.Component {
   render() {
     const { items, className } = this.props;
 
-    if (!items) {
-      return null;
-    }
-
     return (
       <ul className={classNames("items", className)}>
         {items.map(item => {
@@ -31,11 +27,9 @@ class Items extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    items: state.items
-  };
-};
+const mapStateToProps = state => ({
+  items: state.items.list
+});
 
 const mapDispatchToProps = {
   getItems

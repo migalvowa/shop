@@ -88,11 +88,9 @@ const ItemPage = ({ getItem, item }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    item: state.item
-  };
-};
+const mapStateToProps = state => ({
+  item: state.items.current
+});
 
 const mapDispatchToProps = {
   getItem

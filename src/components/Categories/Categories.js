@@ -8,7 +8,7 @@ import "./styles/index.scss";
 
 // ---
 
-const Categories = ({ categories, className }) => {
+const Categories = ({ getCategories, categories, className }) => {
   useEffect(() => {
     getCategories();
   }, []);
@@ -27,7 +27,7 @@ const Categories = ({ categories, className }) => {
 };
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state.categories.list
 });
 
 const mapDispatchToProps = {
