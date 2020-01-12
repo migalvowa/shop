@@ -2,21 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button/Button";
-import { URL } from "../../constants/api";
+import { BASE_URL } from "../../constants/api";
 
 import "./styles/index.scss";
 
 // ---
 
 const Item = ({ item }) => {
+  const itemUrl = `/items/${item.slug}`;
+
   return (
     <li className="item">
-      <Link className="item__link-text" to={`items/${item.slug}`}>
+      <Link className="item__link-text" to={itemUrl}>
         {item.title}
       </Link>
 
-      <Link to={`items/${item.slug}`}>
-        <img src={`${URL}${item.photos[0].url}`} />
+      <Link to={itemUrl}>
+        <img src={`${BASE_URL}${item.photos[0].url}`} />
       </Link>
 
       <span className="item__price">{`${item.price} ₴`}</span>

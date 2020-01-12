@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 import Button from "../../Button/Button";
 import { getItem } from "../../../actions/items.action";
-import { URL } from "../../../constants/api";
+import { BASE_URL } from "../../../constants/api";
 
 import "./styles/index.scss";
 
@@ -21,7 +21,7 @@ const ItemPage = ({ getItem, item }) => {
   useEffect(() => {
     if (item) {
       const pictures = item.photos;
-      setBigPicture(`${URL}${pictures[0].url}`);
+      setBigPicture(`${BASE_URL}${pictures[0].url}`);
       setActive(pictures[0].id);
     }
   }, [item]);
@@ -42,7 +42,7 @@ const ItemPage = ({ getItem, item }) => {
       return;
     }
 
-    setBigPicture(`${URL}${newPicture.url}`);
+    setBigPicture(`${BASE_URL}${newPicture.url}`);
 
     setActive(id);
   };
@@ -67,7 +67,7 @@ const ItemPage = ({ getItem, item }) => {
                   onClick={() => handleClick(element.id)}
                 >
                   <img
-                    src={`${URL}${element.url}`}
+                    src={`${BASE_URL}${element.url}`}
                     alt={item.title}
                   />
                 </li>

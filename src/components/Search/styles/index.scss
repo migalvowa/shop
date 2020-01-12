@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  align-items: center;
+
+  &__title {
+    margin-right: 10px;
+  }
+
+  &__input {
+    width: 150px;
+    height: 30px;
+    background: #e3dfdf;
+    border: none;
+  }
+}

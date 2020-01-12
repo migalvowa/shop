@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import classNames from "classnames";
 
 import { getCategories } from "../../actions/categories.action";
+import Category from "../Category/Category";
 
 import "./styles/index.scss";
 
@@ -15,11 +16,12 @@ const Categories = ({ getCategories, categories, className }) => {
 
   return (
     <ul className={classNames("categories", className)}>
-      {categories.map(item => {
+      {categories.map(category => {
         return (
-          <li key={item.id}>
-            {item.title}
-          </li>
+          <Category
+            key={category.id}
+            category={category}
+          />
         );
       })}
     </ul>

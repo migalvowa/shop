@@ -15,12 +15,20 @@ class Items extends React.Component {
   }
 
   render() {
-    const { items, className } = this.props;
+    const { items, className, searchValue } = this.props;
+
+    const filteredItems = items.filter(item => {
+      return (
+        item.title.includes(searchValue)
+      );
+    });
 
     return (
       <ul className={classNames("items", className)}>
-        {items.map(item => {
-          return <Item key={item.id} item={item} />;
+        {filteredItems.map(item => {
+          return (
+            <Item key={item.id} item={item} />
+          );
         })}
       </ul>
     );
@@ -28,7 +36,8 @@ class Items extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  items: state.items.list
+  items: state.items.list,
+  searchValue: state.search.searchValue
 });
 
 const mapDispatchToProps = {

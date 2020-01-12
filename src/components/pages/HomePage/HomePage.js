@@ -10,9 +10,17 @@ import "./styles/index.scss";
 const HomePage = () => {
   return (
     <div className="home-page">
-      <Categories className="home-page__categories" />
+      <section>
+        <h2>Категории</h2>
 
-      <Items className="home-page__items" />
+        <Categories />
+      </section>
+
+      <section className="home-page__items-holder">
+        <h2>Товары</h2>
+
+        <Items className="home-page__items" />
+      </section>
     </div>
   );
 };

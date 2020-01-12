@@ -1,5 +1,7 @@
 import { GET_CATEGORIES, GET_CATEGORY } from "../constants/action-types";
 
+// ---
+
 const initialState = {
   list: [],
   current: null

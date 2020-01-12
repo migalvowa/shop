@@ -1,0 +1,13 @@
+.category {
+  width: calc(100% / 3);
+
+  padding: 15px;
+
+  &__link-text {
+    font-size: 18px;
+    text-decoration: none;
+    color: #3f1dcb;
+
+    padding: 10px 0;
+  }
+}

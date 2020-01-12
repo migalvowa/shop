@@ -31,11 +31,11 @@
       "via": "related",
       "plugin": "upload"
     },
-    "category": {
-      "model": "category"
-    },
     "tags": {
       "collection": "tag"
+    },
+    "category": {
+      "model": "category"
     }
   }
 }

@@ -1,5 +1,7 @@
 import { GET_ITEMS, GET_ITEM } from "../constants/action-types";
 
+// ---
+
 const initialState = {
   list: [],
   current: null
