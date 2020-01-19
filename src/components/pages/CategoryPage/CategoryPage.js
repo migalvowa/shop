@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import Item from "../../Item/Item";
 import { getItems } from "../../../actions/items.action";
 import { getCategory } from "../../../actions/categories.action";
@@ -22,20 +23,26 @@ const CategoryPage = ({ getItems, getCategory, items, category }) => {
     return null;
   }
 
-  const filteredItems = items.filter(item => {
-    return (
-      item.category.slug === slug
-    );
-  });
+  const categoryItems = items.filter(item => item.category.slug === slug);
+
+  const breadcrumbsItems = [
+    { title: "Каталог", slug: "/categories" },
+    { title: category.title }
+  ];
 
   return (
     <div className="category-page">
+      <Breadcrumbs items={breadcrumbsItems} />
+
       <h1>{category.title}</h1>
 
-      <ul className="items">
-        {filteredItems.map(item => {
+      <ul className="category-page__items">
+        {categoryItems.map(item => {
           return (
-            <Item key={item.id} item={item} />
+            <Item
+              key={item.id}
+              item={item}
+            />
           );
         })}
       </ul>

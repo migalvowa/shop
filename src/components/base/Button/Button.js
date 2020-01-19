@@ -22,7 +22,7 @@ const Button = ({ children, type, className, standard, ...rest } ) => {
 
 Button.defaultProps = {
   type: "button",
-  standard: true
+  standard: true,
 };
 
 export default Button;

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import classNames from "classnames";
 
-import Button from "../../Button/Button";
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+import Button from "../../base/Button/Button";
+import Tabs from "../../Tabs/Tabs";
 import { getItem } from "../../../actions/items.action";
 import { BASE_URL } from "../../../constants/api";
 
@@ -16,7 +19,7 @@ const ItemPage = ({ getItem, item }) => {
 
   useEffect(() => {
     getItem(slug);
-  }, []);
+  }, [slug]);
 
   useEffect(() => {
     if (item) {
@@ -47,8 +50,15 @@ const ItemPage = ({ getItem, item }) => {
     setActive(id);
   };
 
+  const breadcrumbsItems = [
+    { title: "Товары", slug: "/items" },
+    { title: item.title }
+  ];
+
   return (
     <div className="item-page">
+      <Breadcrumbs items={breadcrumbsItems} />
+
       <div className="item-page__content">
         <div className="item-page__pictures">
           <img
@@ -81,7 +91,21 @@ const ItemPage = ({ getItem, item }) => {
 
           <p>{item.description}</p>
 
-          <Button className="item-page__order-btn">Купить</Button>
+          <div className="item-page__tags">
+            <strong>Категория:</strong>
+
+            <Link to={`/categories/${item.category.slug}`}>
+              {item.category.title}
+            </Link>
+          </div>
+
+          <div className="item-page__order">
+            <span className="item-page__price">Цена: {`${item.price} ₴`}</span>
+
+            <Button className="item-page__order-btn">Купить</Button>
+          </div>
+
+          <Tabs className="item-page__tabs" />
         </div>
       </div>
     </div>

@@ -1,9 +1,24 @@
 .home-page {
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__items-holder {
     margin-top: 20px;
   }
 
   &__items {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+  }
+
+  // todo: rename className
+  .link {
+    text-align: right;
+
     margin-top: 20px;
   }
 }

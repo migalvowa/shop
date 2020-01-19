@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Container from "../Container/Container";
+import Container from "../base/Container/Container";
 import Search from "../Search/Search";
 import Navigation from "../Navigation/Navigation";
 

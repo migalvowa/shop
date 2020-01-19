@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/pages/HomePage/HomePage";
 import CategoryPage from "./components/pages/CategoryPage/CategoryPage";
+import CategoriesPage from "./components/pages/CategoriesPage/CategoriesPage";
 import ItemPage from "./components/pages/ItemPage/ItemPage";
+import ItemsPage from "./components/pages/ItemsPage/ItemsPage";
+import LoginPage from "./components/pages/LoginPage/LoginPage";
 
 // ---
 
@@ -16,9 +19,23 @@ function App() {
           <Route path="/items/:slug">
             <ItemPage />
           </Route>
+
+          <Route path="/items">
+            <ItemsPage />
+          </Route>
+
           <Route path="/categories/:slug">
             <CategoryPage />
           </Route>
+
+          <Route path="/categories">
+            <CategoriesPage />
+          </Route>
+
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+
           <Route path="/">
             <HomePage />
           </Route>

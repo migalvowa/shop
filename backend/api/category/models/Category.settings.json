@@ -24,6 +24,9 @@
       "collection": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "is_popular": {
+      "type": "boolean"
     }
   }
 }

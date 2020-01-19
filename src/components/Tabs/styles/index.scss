@@ -1,0 +1,30 @@
+.tabs {
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid #9b4646;
+  }
+
+  &__nav-item {
+    &--active {
+      .tabs__nav-item-btn  {
+        color: #ffffff;
+        background: #9b4646;
+      }
+    }
+  }
+
+  &__nav-item-btn {
+    border-top: 1px solid #9b4646;
+    border-left: 1px solid #9b4646;
+    border-right: 1px solid #9b4646;
+  }
+
+  &__panel-item {
+    ul {
+      margin-top: 20px;
+    }
+  }
+}

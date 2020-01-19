@@ -1,8 +1,7 @@
 import React from "react";
 
-import Container from "../Container/Container";
+import Container from "../base/Container/Container";
 import Header from "../Header/Header";
-// import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Footer from "../Footer/Footer";
 
 import "./styles/index.scss";
@@ -16,8 +15,6 @@ const Layout = ({ children }) => {
 
       <main className="layout__main">
         <Container>
-          {/* <Breadcrumbs /> */}
-
           {children}
         </Container>
       </main>

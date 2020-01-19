@@ -12,32 +12,25 @@ const Breadcrumbs = ({ items }) => {
         <Link to="/">Главная</Link>
       </li>
 
-      {items.map((item, index) =>
+      {items.map((item, index) => {
+        return (
           <li className="breadcrumbs__item" key={index}>
             {index === items.length - 1
               ? item.title
               : (
-                <Link to={item.url}>
+                <Link to={item.slug}>
                   {item.title}
                 </Link>
               )}
           </li>
-        )}
+        );
+      })}
     </ul>
   );
 };
 
 Breadcrumbs.defaultProps = {
-  items: [
-    {
-      title: "Блокнот Подсознание",
-      slug: "bloknot-podsoznanie"
-    },
-    {
-      title: "Софт-бук Blue",
-      slug: "soft-buk-blue"
-    }
-  ]
+  items: [],
 };
 
 export default Breadcrumbs;

@@ -1,28 +1,73 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import Categories from "../../Categories/Categories";
-import Items from "../../Items/Items";
+import { getCategories } from "../../../actions/categories.action";
+import { getItems } from "../../../actions/items.action";
+import Category from "../../Category/Category";
+import Item from "../../Item/Item";
 
 import "./styles/index.scss";
 
 // ---
 
-const HomePage = () => {
+const HomePage = ({ getCategories, getItems, categories, items }) => {
+  useEffect(() => {
+    getCategories();
+    getItems();
+  }, []);
+
+  const popularCategories = categories.filter(category => category.is_popular);
+
+  const popularItems = items.filter(item => item.is_popular);
+
   return (
     <div className="home-page">
       <section>
-        <h2>Категории</h2>
+        <h2>Популярные категории</h2>
 
-        <Categories />
+        <ul className="home-page__categories">
+          {popularCategories.map(category => {
+            return (
+              <Category
+                key={category.id}
+                category={category}
+              />
+            );
+          })}
+        </ul>
+
+        <Link className="link" to="/categories">Все категории</Link>
       </section>
 
       <section className="home-page__items-holder">
-        <h2>Товары</h2>
+        <h2>Популярные товары</h2>
 
-        <Items className="home-page__items" />
+        <ul className="home-page__items">
+          {popularItems.map(item => {
+            return (
+              <Item
+                key={item.id}
+                item={item}
+              />
+            );
+          })}
+        </ul>
+
+        <Link className="link" to="/items">Все товары</Link>
       </section>
     </div>
   );
 };
 
-export default HomePage;
+const mapStateToProps = state => ({
+  categories: state.categories.list,
+  items: state.items.list
+});
+
+const mapDispatchToProps = {
+  getCategories,
+  getItems
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

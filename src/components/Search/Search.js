@@ -22,9 +22,12 @@ const Search = ({ setSearchValue, getItems, searchValue, items }) => {
     setSearchValue("");
   };
 
-  const filteredItems = items.filter(item => {
+  const searchResults = items.filter(item => {
+    const title = item.title.toLowerCase();
+    const value = searchValue.toLowerCase();
+
     return (
-      item.title.toLowerCase().includes(searchValue.toLowerCase()) && searchValue !== ""
+      title.includes(value) && searchValue !== ""
     );
   });
 
@@ -35,22 +38,26 @@ const Search = ({ setSearchValue, getItems, searchValue, items }) => {
         type="search"
         value={searchValue}
         onChange={handleSearchValue}
+        placeholder="Поиск..."
       />
 
-      <ul className="search__results">
-        {filteredItems.map(item => {
-          return (
-            <li
-              className="search__results-item"
-              onClick={closeSearchResults}
-            >
-              <Link to={`/items/${item.slug}`}>
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      {searchValue.length > 0 && (
+        <ul className="search__results">
+          {searchResults.map(item => {
+            return (
+              <li
+                key={item.id}
+                className="search__results-item"
+                onClick={closeSearchResults}
+              >
+                <Link to={`/items/${item.slug}`}>
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

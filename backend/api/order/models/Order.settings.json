@@ -14,9 +14,6 @@
     "comment": ""
   },
   "attributes": {
-    "items": {
-      "collection": "item"
-    },
     "phone": {
       "type": "string"
     },
@@ -41,6 +38,9 @@
         "finished"
       ],
       "type": "enumeration"
+    },
+    "items": {
+      "collection": "item"
     }
   }
 }

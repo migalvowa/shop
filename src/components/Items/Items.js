@@ -21,7 +21,10 @@ class Items extends React.Component {
       <ul className={classNames("items", className)}>
         {items.map(item => {
           return (
-            <Item key={item.id} item={item} />
+            <Item
+              key={item.id}
+              item={item}
+            />
           );
         })}
       </ul>
