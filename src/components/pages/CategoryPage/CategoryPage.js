@@ -25,14 +25,14 @@ const CategoryPage = ({ getItems, getCategory, items, category }) => {
 
   const categoryItems = items.filter(item => item.category.slug === slug);
 
-  const breadcrumbsItems = [
-    { title: "Каталог", slug: "/categories" },
+  const breadcrumbs = [
+    { title: "Каталог", slug: "categories" },
     { title: category.title }
   ];
 
   return (
     <div className="category-page">
-      <Breadcrumbs items={breadcrumbsItems} />
+      <Breadcrumbs items={breadcrumbs} />
 
       <h1>{category.title}</h1>
 

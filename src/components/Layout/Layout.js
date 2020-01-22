@@ -1,8 +1,8 @@
 import React from "react";
 
 import Container from "../base/Container/Container";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 import "./styles/index.scss";
 

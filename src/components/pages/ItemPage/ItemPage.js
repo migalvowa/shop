@@ -50,14 +50,36 @@ const ItemPage = ({ getItem, item }) => {
     setActive(id);
   };
 
-  const breadcrumbsItems = [
-    { title: "Товары", slug: "/items" },
+  const breadcrumbs = [
+    { title: "Товары", slug: "items" },
     { title: item.title }
+  ];
+
+  const tabs = [
+    {
+      title: "Доставка",
+      content: `<p><strong>Доставка</strong> осуществялется разными способами:</p>
+
+      <ul>
+        <li>- Пешком</li>
+        <li>- Бегом</li>
+        <li>- Самолетом</li>
+      </ul>`
+    },
+    {
+      title: "Оплата",
+      content: `<p><strong>Оплата</strong> осуществялется разными способами:</p>
+
+      <ul>
+        <li>- Наличными</li>
+        <li>- Переводом</li>
+      </ul>`
+    }
   ];
 
   return (
     <div className="item-page">
-      <Breadcrumbs items={breadcrumbsItems} />
+      <Breadcrumbs items={breadcrumbs} />
 
       <div className="item-page__content">
         <div className="item-page__pictures">
@@ -105,7 +127,10 @@ const ItemPage = ({ getItem, item }) => {
             <Button className="item-page__order-btn">Купить</Button>
           </div>
 
-          <Tabs className="item-page__tabs" />
+          <Tabs
+            className="item-page__tabs"
+            list={tabs}
+          />
         </div>
       </div>
     </div>

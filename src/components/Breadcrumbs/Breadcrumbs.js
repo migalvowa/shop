@@ -18,7 +18,7 @@ const Breadcrumbs = ({ items }) => {
             {index === items.length - 1
               ? item.title
               : (
-                <Link to={item.slug}>
+                <Link to={`/${item.slug}`}>
                   {item.title}
                 </Link>
               )}
