@@ -6,7 +6,7 @@ import "./styles/index.scss";
 
 // ---
 
-const Button = ({ children, type, className, standard, ...rest } ) => {
+const Button = ({ children, type, className, standard, ...rest }) => {
   return (
     <button
       type={type}

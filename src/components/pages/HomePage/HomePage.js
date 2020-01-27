@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { CSSTransitionGroup } from "react-transition-group";
 
 import { getCategories } from "../../../actions/categories.action";
 import { getItems } from "../../../actions/items.action";
@@ -27,14 +28,22 @@ const HomePage = ({ getCategories, getItems, categories, items }) => {
         <h2>Популярные категории</h2>
 
         <ul className="home-page__categories">
-          {popularCategories.map(category => {
-            return (
-              <Category
-                key={category.id}
-                category={category}
-              />
-            );
-          })}
+          <CSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+            transitionAppearTimeout={8000}
+            transitionEnter={false}
+            transitionLeave={false}
+          >
+            {popularCategories.map(category => {
+              return (
+                <Category
+                  key={category.id}
+                  category={category}
+                />
+              );
+            })}
+          </CSSTransitionGroup>
         </ul>
 
         <Link className="link" to="/categories">Все категории</Link>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 
-import Button from "../base/Button/Button";
+import Button from "../Button/Button";
 
 import "./styles/index.scss";
 
@@ -32,13 +32,7 @@ const Tabs = ({ className, list }) => {
       </ul>
 
       <div className="tabs__panel">
-        {list.map((item, index) => {
-          return (
-            <div className="tabs__panel-item">
-              {tab === index && item.content}
-            </div>
-          );
-        })}
+        {list[tab].content}
       </div>
     </div>
   );

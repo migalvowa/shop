@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import Button from "../../base/Button/Button";
-import Tabs from "../../Tabs/Tabs";
+import Tabs from "../../base/Tabs/Tabs";
 import { getItem } from "../../../actions/items.action";
 import { BASE_URL } from "../../../constants/api";
 
@@ -58,22 +58,28 @@ const ItemPage = ({ getItem, item }) => {
   const tabs = [
     {
       title: "Доставка",
-      content: `<p><strong>Доставка</strong> осуществялется разными способами:</p>
+      content:
+      <>
+        <p><strong>Доставка</strong> осуществялется разными способами:</p>
 
-      <ul>
-        <li>- Пешком</li>
-        <li>- Бегом</li>
-        <li>- Самолетом</li>
-      </ul>`
+        <ul>
+          <li>- Пешком</li>
+          <li>- Бегом</li>
+          <li>- Самолетом</li>
+        </ul>
+      </>
     },
     {
       title: "Оплата",
-      content: `<p><strong>Оплата</strong> осуществялется разными способами:</p>
+      content:
+      <>
+        <p><strong>Оплата</strong> осуществялется разными способами:</p>
 
-      <ul>
-        <li>- Наличными</li>
-        <li>- Переводом</li>
-      </ul>`
+        <ul>
+          <li>- Наличными</li>
+          <li>- Переводом</li>
+        </ul>
+      </>
     }
   ];
 
